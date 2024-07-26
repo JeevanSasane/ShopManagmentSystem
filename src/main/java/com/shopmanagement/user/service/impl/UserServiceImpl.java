@@ -92,6 +92,7 @@ public class UserServiceImpl implements UserServices {
     @Override
     public ResponseEntity<?> loginUser(String userName, String password) {
 
+        System.out.println("in loginUser");
         var response=new Response<>();
         Optional<Users> getUser= Optional.ofNullable(userRepo.findByLoginName(userName));
         if (getUser.isPresent()){
